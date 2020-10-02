@@ -6,7 +6,9 @@ namespace Linked_List
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            LinkList L = new LinkList();
+            L.InsertAfter(12);
+            L.InsertAfter(13);
         }
     }
 }
