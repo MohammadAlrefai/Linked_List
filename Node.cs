@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Linked_List
-{
+namespace Linked_List{
     public class Node {
         public int Data { get; set; }
         public Node Next { get; set; }
@@ -15,6 +14,5 @@ namespace Linked_List
             Data = value;
             Next = null;
         }
-       
     }
 }

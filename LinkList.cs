@@ -11,7 +11,6 @@ namespace Linked_List
         public LinkList() {
             Head = Tail = null;
         }
-
         public void InsertAfter(int value) {
             Node Item = new Node(value);
             if (Head==null) {
@@ -39,7 +38,6 @@ namespace Linked_List
                 current = current.Next;
             }
         }
-
         public string To_String() {
             var data = ""; 
             var current = Head;
@@ -50,6 +48,42 @@ namespace Linked_List
             data += " NULL";
             return data;
         }
+        public void Delet(int value) {
+            if (Head == null)
+            {
+                Console.WriteLine("List empty");
+                return;
+            }
+            else if (Head.Data==value) {
+                if (Head == Tail) {
+                    Tail = null;
+                }
+                Head = Head.Next;
+                return;
+            }
+            else {
+                var current = Head.Next;
+                var back = Head;
+                while (current != null)
+                {
+                    if (current.Data == value) {
+                        back.Next = current.Next;
+                        if (back.Next==null) {
+                            Tail = back;
+                        }
+                        return;
+                    }
+                    current = current.Next;
+                    back = back.Next;
+                }
+                if (current==null)
+                {
+                    Console.WriteLine("Not found");
+                }
+            } 
+        }
+
+
 
     }
 }
