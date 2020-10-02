@@ -21,15 +21,35 @@ namespace Linked_List
                 Tail.Next = Item;
                 Tail =Item;
             }
-
-
+        }
+        public bool Includes(int value) {
+            var current = Head;
+            while (current!=null) {
+                if (current.Data==value) {
+                    return true;
+                }
+                current = current.Next;
+            }
+            return false;
+        }
+        public void Show () {
+            var current = Head;
+            while (current != null) {
+                Console.WriteLine(current.Data);
+                current = current.Next;
+            }
         }
 
-        public void Includes()
-        {
-
+        public string To_String() {
+            var data = ""; 
+            var current = Head;
+            while (current!=null) {
+                data +=" { " +current.Data + " } -> ";
+                current = current.Next;
+            }
+            data += " NULL";
+            return data;
         }
-
 
     }
 }
